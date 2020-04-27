@@ -1,0 +1,17 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{texsx}[1][]
+{
+  \vskip1cm%
+  \begin{tikzpicture}
+    \ifx\insertframesubtitle\@empty%
+      \node[anchor=west, capri,font=\Large] at (3.2,0.61){\insertframetitle};
+      \else%
+      \node[anchor=west, capri,font=\Large] at (3.2,0.61){\insertframetitle};
+      \node[anchor=west, naranja,font=\small] at (3.2,0.11){\insertframesubtitle};
+    \fi%
+  \end{tikzpicture}
+}
+
+\mode<all>

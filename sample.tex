@@ -1,0 +1,62 @@
+\documentclass{beamer}
+
+% Change the theme
+\usetheme{UTEC2020}
+
+\title{My Presentation}
+%subtitle will be the name course
+\subtitle{CS1D02 Estructuras Discretas II}
+\author{Prof. Nombre Apellido}
+\institute{UTEC}
+\date{\today}
+
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%-----------------------------------------------
+{\usebackgroundtemplate{\includegraphics[width=\paperwidth, height=\paperheight]{imgBeamer/ContentFrame}}
+\begin{frame}
+  \frametitle{Outline}
+
+  \tableofcontents
+\end{frame}
+}
+%-----------------------------------------------
+\begin{frame}{Title}{Subtitle}
+\begin{theorem}
+There is no largest prime number.
+\end{theorem}
+
+\end{frame}
+%-----------------------------------------------
+\section{Section 1}
+\begin{frame}{Title 2}{}
+
+\begin{exampleblock}{Ejemplo}
+ Es un exampleblock
+\end{exampleblock}
+
+\begin{itemize}
+\item 1 \alert{hola}
+\item 2
+  \begin{itemize}
+    \item 1.1
+  \end{itemize}
+\end{itemize}
+
+\end{frame}
+%-----------------------------------------------
+\subsection{Subsection 1.1}
+\begin{frame}{Title 3}{}
+  \begin{definition}
+    Aqui van definiciones
+  \end{definition}
+\end{frame}
+%-----------------------------------------------
+
+\end{document}

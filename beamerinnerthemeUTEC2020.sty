@@ -1,0 +1,86 @@
+%Background and TitlePage
+
+
+\mode<presentation>
+
+%Background
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+
+    \ifnum\thepage=1\relax%
+      \node[inner sep=0pt] (russell) at (0,0){\includegraphics[width=1.2\textwidth,height=\textheight]{imgBeamer/MainFrame}};
+    \else \relax
+    \ifnum\thepage=2\relax%
+      \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \else \relax
+    \ifnum\thepage>2\relax%
+      \node[inner sep=0pt] (russell) at (0,0){\includegraphics[width=1.2\textwidth,height=\textheight]{imgBeamer/SimpleFrame}};
+    \fi
+    \fi
+    \fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{UTEC2020}[1][]
+{
+   \vskip0.2cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=0.25cm,sep=8pt,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \vskip0.75cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=0.5cm,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+     \vskip0.2cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=0.5cm,#1]{date}
+      \usebeamerfont{author}\insertdate%
+    \end{beamercolorbox}
+  \vfill
+}
+
+%headline
+\setbeamertemplate{headline}
+{
+  \leavevmode%
+  \ifnum\thepage=1\relax%
+  \else \relax
+  \ifnum\thepage=2\relax%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=8.25ex,dp=3.5ex]{secsubsec}%
+    \raggedright
+    \hspace*{2em}%
+    {\color{white}\insertsubtitle\hfill\insertauthor}
+    \hspace*{2em}%
+  \end{beamercolorbox}%
+  }%
+  \else \relax
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=8.25ex,dp=3.5ex]{secsubsec}%
+    \raggedright
+    \hspace*{2em}%
+    {\color{gray}\insertsubtitle\hfill\insertauthor}
+    \hspace*{2em}%
+  \end{beamercolorbox}%
+  }%
+  \fi
+  \fi
+}
+
+%footline
+\setbeamertemplate{footline}[text line]{%
+\begin{beamercolorbox}[wd = \paperwidth, leftskip=0.06\paperwidth]{footer}
+\ifnum\value{page}=1
+\else \relax
+\ifnum\value{page}>1%
+\parbox{\linewidth}{\usebeamerfont{footer}\vspace*{-16pt}\insertpagenumber}
+\setbeamertemplate{navigation symbols}{}
+\else \relax
+\fi
+\fi
+\end{beamercolorbox}
+}
+
+
+\mode
+<all>
